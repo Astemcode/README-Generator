@@ -12,6 +12,11 @@ const questions = require('inquirer')
         message: 'What is the link to your repository?',
         name: 'repoLink',
       },
+    {
+        type: 'input',
+        message: 'What is the name of your project?',
+        name: 'projectName',
+      },
       {
         type: 'input',
         message: 'What is the Description for your project? (Please include purpose.)',
@@ -49,9 +54,15 @@ const questions = require('inquirer')
       }
     ])
 
-// function to write README file
-function writeToFile(fileName, data) {
+    .then((response) =>
+    console.log(response)
+    )
 
+    
+
+// function to write README file
+function writeToFile("README.md", markDown) {
+  
 }
 
 // function to initialize program
