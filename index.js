@@ -1,14 +1,16 @@
 // array of questions for user
-const questions = [
+const questions = require('inquirer') 
+  questions
+  .prompt([
+    {
+      type: 'input',
+      message: 'What is the name of your repository?',
+      name: 'repoName',
+    },
     {
         type: 'input',
         message: 'What is the link to your repository?',
         name: 'repoLink',
-      },
-    {
-        type: 'input',
-        message: 'What is the name of your repository?',
-        name: 'repoName',
       },
       {
         type: 'input',
@@ -44,16 +46,8 @@ const questions = [
         type: 'input',
         message: 'What tests have been run on this project?',
         name: 'tests',
-      },
-    
-    ]
-    .then((response) =>
-      response.confirm === response.password
-        ? console.log('Success!')
-        : console.log('You forgot your password already?!')
-    );
-  
-;
+      }
+    ])
 
 // function to write README file
 function writeToFile(fileName, data) {
@@ -62,6 +56,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
+  // console.log(questions)
 
 }
 
