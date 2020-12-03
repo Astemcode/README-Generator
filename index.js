@@ -22,31 +22,56 @@ function init() {
       type: 'input',
       message: 'What is the gitHub username?',
       name: 'userName',
+      validate: function (answer) {
+        if (answer.length < 3) {
+          return console.log("That username is not valid!");
+        }
+        return true;
+      }
     },
     {
       type: 'input',
       message: 'What is the name of your repository?',
       name: 'repoName',
+      validate: function (answer) {
+        if (answer.length < 3) {
+          return console.log("An authentic Repository name is required!");
+        }
+        return true;
+      }
     },
     {
         type: 'input',
         message: 'What is the link to your repository?',
         name: 'repoLink',
+        validate: function (answer) {
+          if (answer.length < 3) {
+            return console.log("A valid link is requied!");
+          }
+          return true;
+        }
       },
     {
         type: 'input',
         message: 'What is the name of your project?',
         name: 'projectName',
+        validate: function (answer) {
+          if (answer.length < 2) {
+            return console.log('The Username selected is not valid!');
+          }
+          return true;
+        }
       },
       {
         type: 'input',
         message: 'What is the Description for your project? (Please include purpose.)',
         name: 'description',
-      },
-      {
-        type: 'input',
-        message: 'What would you like to include into your table of contents?',
-        name: 'contents',
+        validate: function (answer) {
+          if (answer.length < 8) {
+            return console.log('A Valid description is needed for this Project!');
+          }
+          return true;
+        }
       },
       {
         type: 'input',
@@ -57,6 +82,11 @@ function init() {
         type: 'input',
         message: 'What are the best uses for this application?',
         name: 'appUse',
+        validate: function (answer) {
+          if (answer.length < 5) {
+            return console.log('A best practice is needed for this app!');
+          }
+        }
       },
       {
         type: 'input',
@@ -74,7 +104,7 @@ function init() {
         name: 'tests',
       }
     ])
-    
+
     .then((response) =>{
     const markDown = generateMarkdown(response);
     writeToFile('README.md',markDown);
