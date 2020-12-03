@@ -1,7 +1,28 @@
+const generateMarkdown = require('./util/generateMarkdown.js');
+const fs = require('fs');
+const questions = require('inquirer'); 
+
+// function to write README file
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, err => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("Success! Your README.md file has been generated");
+  });
+}
+
+// function to initialize program
+function init() {
+
 // array of questions for user
-const questions = require('inquirer') 
   questions
   .prompt([
+    {
+      type: 'input',
+      message: 'What is the gitHub username?',
+      name: 'userName',
+    },
     {
       type: 'input',
       message: 'What is the name of your repository?',
@@ -53,23 +74,12 @@ const questions = require('inquirer')
         name: 'tests',
       }
     ])
-
-    .then((response) =>
-    console.log(response)
-    )
-
     
+    .then((response) =>{
+    const markDown = generateMarkdown(response);
+    writeToFile('README.md',markDown);
+    
+  })
+  }
 
-// function to write README file
-function writeToFile("README.md", markDown) {
-  
-}
-
-// function to initialize program
-function init() {
-  // console.log(questions)
-
-}
-
-// function call to initialize program
 init();
