@@ -74,7 +74,7 @@ function init() {
 			},
 			{
 				type: 'input',
-				message: 'What are the steps for installation?',
+				message: 'What are the steps for local installation?',
 				name: 'installation'
 			},
 			{
@@ -114,7 +114,7 @@ function init() {
 					'The Unlicense',
 					'wxWindows Library License (WXwindows)'
 				],
-				name: 'license'
+				name: 'licenses'
 			},
 			{
 				type: 'input',

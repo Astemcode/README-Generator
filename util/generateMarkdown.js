@@ -1,9 +1,9 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-    return `# ${data.title}
-    ## Description
-    ${data.Description}
-    ## Table of Contents
+    return `# ${data.projectName}
+    ## Repository Name
+    ${data.repoName}
+
     * [Installation](#installation)
     * [Usage](#usage)
     * [Contributing](#contributing)
@@ -11,16 +11,16 @@ function generateMarkdown(data) {
     * [License](#license)
     * 
     ## Usage
-    -To unstall the project follow the following instructions
-    ${data.Uses}
+    -
+    ${data.appUse}
     ## Installation
     -To unstall the project follow the following instructions
-    ${data.installationSteps}
+    ${data.installation}
     ## GitHub Repository Link
     - ${data.repoLink}
     ## Contributors
     - Please find the contributors of this project below
-    ${data.contributors}
+    ${data.members}
     ## Tests
     - Here is a description of tests that were completed on this project before release.
     - ${data.tests}
@@ -29,7 +29,7 @@ function generateMarkdown(data) {
     ## Questions
     *Please direct Questions to the following
        - https://github.com/${data.userName}
-       - Email : ${data.Email}
+       
   `;
   }
   module.exports = generateMarkdown;
