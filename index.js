@@ -97,22 +97,22 @@ function init() {
 				type: 'list',
 				message: 'Select the licenses which will be associated with your project.',
 				choices: [
-					'Apache License 2.0 (Apache-2.0)',
-					'Boost Software License 1.0',
-					'Apple Public Source License (APSL-2.0)',
-					'Boost Software License (BSL-1.0)',
-					'Eclipse Public License 2.0 (EPL-2.0)',
-					'GNU AGPLv3',
-					'GNU GPLv3',
-					'GNU LGPLv3',
-					'IBM Public License 1.0 (IPL-1.0)',
-					'Microsoft Public License (MS-PL)',
-					'MIT License (MIT)',
-					'Mozilla Public License 2.0 (MPL-2.0)',
-					'Nokia Open Source License (Nokia)',
-					'Open Software License 3.0 (OSL-3.0)',
-					'The Unlicense',
-					'wxWindows Library License (WXwindows)'
+					'Apache-2.0',
+					'BoostSoftwareLicense 1.0',
+					'APSL-2.0',
+					'BSL-1.0',
+					'EPL-2.0',
+					'GNUAGPLv3',
+					'GNUGPLv3',
+					'GNULGPLv3',
+					'IPL-1.0',
+					'MS-PL',
+					'MIT',
+					'MPL-2.0',
+					'Nokia',
+					'OSL-3.0',
+					'TheUnlicense',
+					'WXwindows'
 				],
 				name: 'licenses'
 			},
@@ -121,10 +121,12 @@ function init() {
 				message: 'What tests have been run on this project?',
 				name: 'tests'
 			}
+
+		
 		])
 		.then((response) => {
 			const markDown = generateMarkdown(response);
-			writeToFile('README.md', markDown);
+			writeToFile('new-README.md', markDown);
 		});
 }
 
