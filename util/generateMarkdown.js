@@ -1,8 +1,8 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
     return `# ${data.projectName}
-## Repository Name
-${data.repoName}
+
+## ${data.repoName}
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -15,7 +15,7 @@ ${data.repoName}
 
 ## Installation
 - To install the project follow the following instructions:
-* ${data.installation}
+*${data.installation}
 
 ## GitHub Repository Link
 
