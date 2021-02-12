@@ -4,6 +4,9 @@ function generateMarkdown(data) {
 
 ## ${data.repoName}
 
+## Description 
+- ${data.description}
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributors)
